@@ -4,8 +4,12 @@ using UnityEngine;
 
 namespace TamLee
 {
-    public class PoolComponent : TamLeeBaseComponent
+    /// <summary>
+    /// 数据表组件
+    /// </summary>
+    public class DataTableComponent : TamLeeBaseComponent
     {
+
         public override void Shutdown()
         {
         }

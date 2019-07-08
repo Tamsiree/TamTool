@@ -21,7 +21,8 @@ namespace TamLee
         /// <returns></returns>
         public TimeAction CreateTimeAction()
         {
-            return new TimeAction();
+            TimeAction action = GameEntry.Pool.DequeueClassObject<TimeAction>();
+            return action;
         }
 
         public void OnUpdate()
@@ -35,6 +36,7 @@ namespace TamLee
         internal void RemoveActiion(TimeAction action)
         {
             m_TimeManager.RemoveActiion(action);
+            GameEntry.Pool.EnqueueClassObject(action);
         }
         public override void Shutdown()
         {
